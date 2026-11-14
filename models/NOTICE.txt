@@ -1,20 +1,23 @@
-LidGuard RGB baseline model: research demonstration only.
+LidGuard RGB baseline model - research demonstration.
 
-The model was fitted to the user-provided 100-image subset of RT-BENE.
+The model was fitted to the training partition of the 100-image RT-BENE
+evaluation subset documented in results/rgb_data_manifest.json.
+
 RT-BENE dataset: Kevin Cortacero, Tobias Fischer, Yiannis Demiris (2019).
 Source: https://zenodo.org/records/3685316
 Paper: RT-BENE: A Dataset and Baselines for Real-Time Blink Estimation in
 Natural Environments, ICCV Workshops 2019.
+DOI: https://doi.org/10.1109/ICCVW.2019.00147
 Dataset license: Creative Commons Attribution-NonCommercial-ShareAlike 4.0.
 License: https://creativecommons.org/licenses/by-nc-sa/4.0/
-The source explicitly excludes commercial use. No raw dataset images are
-redistributed in this package. Do not infer commercial permission for this
-trained artifact. Preserve this notice and review upstream terms before reuse.
 
-This package does not assign an open-source license to the team's original
-work, earlier results, photographs, branding or other supplied materials.
+The source explicitly excludes commercial use. Raw dataset images are not
+redistributed in this repository. Availability of the numeric model does not
+establish commercial permission for this trained artifact. Preserve this
+notice and review the upstream terms before reuse.
 
-The PopEYE NIR archive supplied separately was not used to train this model.
-PopEYE source: https://zenodo.org/records/18595048
-PopEYE license: CC BY 4.0. Its original labels do not include the locally
-created partial_opening_reviewer_flagged category.
+No project-wide reuse license has been specified. Dataset terms and attribution
+do not assign a license to unrelated project code, branding, or other assets.
+
+The classifier uses RGB eye crops. It has not been validated on NIR images,
+clinical corneal exposure, or ICU patients. PopEYE is not used by this model.

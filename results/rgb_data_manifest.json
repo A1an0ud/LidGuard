@@ -5,7 +5,6 @@
   "raw_images_included": false,
   "source_url": "https://zenodo.org/records/3685316",
   "license": "CC-BY-NC-SA-4.0",
-  "selection_before_upload": "Not documented in supplied archive",
   "files": [
     {
       "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s003_left_000025_rgb.png",
@@ -707,5 +706,6 @@
       "subject": "s016",
       "split": "train"
     }
-  ]
+  ],
+  "subset_selection_method": "The selection method for this subset was not documented."
 }

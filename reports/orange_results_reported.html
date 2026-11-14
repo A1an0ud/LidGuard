@@ -3,8 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Prototype: Eye State Detection (Open / Closed)</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<title>LidGuard - Archived Orange experiment</title>
 <style>
 :root{--bg:#f6f8fb;--card:#fff;--tx:#14202e;--mut:#5b6b7c;--bd:#dfe6ee;--ac:#0f766e;--cl:#2d9cdb;--op:#e5533d;--ok:#16a34a;--bad:#dc2626;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1720;--card:#18232f;--tx:#e8eef5;--mut:#9fb0c1;--bd:#2a3a4a;--ac:#2dd4bf;--ok:#4ade80;--bad:#f87171}}
@@ -39,8 +38,12 @@ td.best{color:var(--ok);font-weight:700}
 </head>
 <body>
 <main>
+<section aria-label="Report scope" style="border:1px solid #d3a65a;border-radius:12px;padding:18px 22px;margin-bottom:24px;background:#fff7e7;color:#493813">
+<strong>Archived Orange experiment - reported results, not reproduced</strong>
+<p style="margin:8px 0 0;font-size:14px;line-height:1.6">This static report records a separate 71-image, five-fold image-embedding experiment. It is not the classifier used by the current LidGuard application. The Orange workflow, trained estimator, full preprocessing settings, and fold assignments are not included in this release; subject separation across folds is undocumented. The figures below are preserved as reported and are not recalculated by this page. They do not establish camera, device, NIR, or clinical performance.</p>
+</section>
 <h1>👁️ Eye State Detection: Open vs Closed</h1>
-<p class="sub">A machine-learning prototype using image embeddings, built on the RT-BENE dataset and implemented in Orange Data Mining.</p>
+<p class="sub">Previously reported evaluation using RT-BENE image embeddings and Orange Data Mining.</p>
 
 <section class="card">
 <h2>Algorithm Pipeline</h2>
@@ -84,7 +87,7 @@ td.best{color:var(--ok);font-weight:700}
 
 <section class="card">
 <h2>Conclusion</h2>
-<p>All four models performed similarly (accuracy 85.9% to 88.7%, AUC 0.928 to 0.974), showing that image-embedding features separate open from closed eyes well. Logistic Regression led in accuracy and MCC, while SVM led in AUC.</p>
+<p>The reported cross-validation results range from 85.9% to 88.7% accuracy and 0.928 to 0.974 AUC. Logistic Regression has the highest reported accuracy and MCC; SVM has the highest reported AUC. These values describe this earlier experiment and cannot establish improvement over the current application's differently evaluated classifier.</p>
 <p class="note">Note: results come from cross validation on 71 images, a small sample, so they should be confirmed on a larger test set.</p>
 </section>
 </main>

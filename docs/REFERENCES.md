@@ -8,7 +8,7 @@ Sources reviewed on **14 November 2026**. These references support the problem c
 
 https://www.raspberrypi.com/documentation/computers/getting-started.html
 
-Used for preparing the Raspberry Pi. The availability of a board and microSD card does not establish that the operating system has booted successfully.
+Reference for OS installation, power requirements, and initial hardware setup.
 
 ## R2
 
@@ -24,7 +24,7 @@ Used for powering down before connecting CSI, identifying the Pi 4 CAMERA connec
 
 https://www.raspberrypi.com/documentation/accessories/camera.html
 
-The team's description “5 MP CSI camera” does not establish the sensor model, manufacturer or presence of an infrared filter. Confirm from the actual component before making an NIR claim.
+Camera resolution alone does not identify the sensor or IR-filter configuration. NIR capability requires identification and validation of the actual camera.
 
 ## R4
 
@@ -68,36 +68,22 @@ https://www.vishay.com/docs/81935/eyesafe.pdf
 
 https://www.icnirp.org/en/frequencies/infrared/index.html
 
-Optical safety depends on the final assembly and exposure conditions. A wavelength label or a component described as low-power does not establish safety for continuous viewing. The current filming workflow uses ordinary room light and does not require uncharacterised IR illumination.
+Optical safety depends on the final assembly and exposure conditions. A wavelength label or a component described as low-power does not establish safety for continuous viewing. No eye-directed IR illumination has been validated for this release.
 
-## Dataset provenance
+## Dataset used by this release
 
-The team-provided `LidGuard_References.docx` states that the supplied image datasets contain general-population volunteer images, not ICU patient images. Source references and licenses must remain distinct from any license applied to original project code.
+**RT-BENE.** Cortacero K, Fischer T, Demiris Y. *RT-BENE: A Dataset and Baselines for Real-Time Blink Estimation in Natural Environments.* ICCV Workshops, 2019. DOI: [10.1109/ICCVW.2019.00147](https://doi.org/10.1109/ICCVW.2019.00147).
 
-**PopEYE_2022.** Giovanni Gibertoni, Guido Borghi and Luigi Rovati, University of Modena and Reggio Emilia. Dataset record supplied by the team:
+Dataset source: https://zenodo.org/records/3685316
 
-https://doi.org/10.5281/zenodo.18595048
+The source specifies **CC BY-NC-SA 4.0** and excludes commercial use. The 100-image evaluation subset is identified in [the provenance manifest](../results/rgb_data_manifest.json); its original selection method is undocumented. Raw images are not redistributed. These are general eye images, not a validation dataset of ICU corneal exposure.
 
-The supplied provenance document identifies CC BY 4.0 and notes that partial-opening labels in its selected subset were AI-flagged and awaiting human review. Do not treat these labels as clinician-verified ground truth. Original publication:
+License text: https://creativecommons.org/licenses/by-nc-sa/4.0/
 
-Gibertoni G, Borghi G, Rovati L. *Vision-Based Eye Image Classification for Ophthalmic Measurement Systems.* Sensors. 2023;23(1):386. https://doi.org/10.3390/s23010386
+Attribution and reuse notes: [models/NOTICE.txt](../models/NOTICE.txt).
 
-**RT-BENE.** Cortacero K, Fischer T, Demiris Y. *RT-BENE: A Dataset and Baselines for Real-Time Blink Estimation in Natural Environments.* ICCVW 2019. https://doi.org/10.1109/ICCVW.2019.00147
+## Other data considered
 
-Dataset: https://zenodo.org/records/3685316
+**PopEYE_2022.** Gibertoni G, Borghi G, Rovati L. Dataset: https://doi.org/10.5281/zenodo.18595048. Related paper: *Vision-Based Eye Image Classification for Ophthalmic Measurement Systems.* Sensors. 2023;23(1):386. https://doi.org/10.3390/s23010386
 
-The supplied subset is marked **CC BY-NC-SA 4.0**. Preserve attribution and the noncommercial/share-alike conditions applicable to the dataset. Do not describe the research dataset or derived model as cleared for commercial deployment.
-
-License texts:
-
-- CC BY 4.0: https://creativecommons.org/licenses/by/4.0/
-- CC BY-NC-SA 4.0: https://creativecommons.org/licenses/by-nc-sa/4.0/
-
-**MRL Eye Dataset.** The supplied provenance document reports no stated dataset license and pending permission. It is not part of the public demo bundle. Do not redistribute it based solely on its availability online.
-
-https://mrl.cs.vsb.cz/eyedataset.html
-
-## Competition requirements
-
-The team's MEDATHON 2026 clarification message permits a detailed interactive digital prototype when a physical device cannot be completed, while asking teams to distinguish completed work from future development. The team's submission message requests six real prototype images and a working-demo video of 60–90 seconds, plus a code repository link. These are team-provided submission instructions, not external scientific evidence. Check the final official upload form before submitting.
-
+PopEYE is not used to train or evaluate the classifier in this release. The source uses CC BY 4.0; its image categories do not establish clinical corneal-exposure grades. No performance result in this repository should be interpreted as PopEYE or NIR validation.

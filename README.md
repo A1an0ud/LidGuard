@@ -1,23 +1,36 @@
 # LidGuard
 
-## Eye-state monitoring engineering prototype for MEDATHON 2026
+## Eye-state monitoring engineering prototype
 
-This repository contains a working local application, a small RGB eye-state classifier, a demonstration alert workflow, and reproducible evaluation outputs. It supports image upload, a browser camera, and an optional Raspberry Pi CSI camera adapter. An explicitly labeled simulation mode can be used to test the timer and alert behavior without a camera.
+LidGuard is a local engineering prototype developed for MEDATHON 2026. It estimates eyelid state from a manually selected eye region and implements an alert timer, event acknowledgment, and CSV event export.
 
-**Current scope:** manually select one eye, estimate OPEN / CLOSED / UNKNOWN, track continuous detected opening, show a review alert, acknowledge an event, and export a CSV log. A person must confirm that the selected region actually contains a visible eye.
+The binary RGB model estimates **OPEN** or **CLOSED**. Input-quality checks, missing operator confirmation, and score-based abstention can return **UNKNOWN**. UNKNOWN is not a separately trained class.
 
-**Not established:** automated eye localization or eye-presence detection, partial-opening measurement, corneal visibility, clinical exposure grades, NIR performance, protection from dressings, or performance in ICU patients. OPEN is an image category, not a diagnosis of corneal exposure. The default 5-second alert threshold and 0.75 model-score threshold are demonstration settings, not clinical limits.
+## Validation status
 
-The application processes images in memory and does not save them or make external network calls. Installing dependencies requires internet access. Events are held in memory until exported, and are lost when the server stops.
+| Area | Recorded status |
+| --- | --- |
+| Python logic and HTTP API | 15 automated tests passed |
+| JavaScript syntax | Syntax check passed |
+| Interactive browser workflow | Not yet validated |
+| Windows launcher on Windows | Not yet validated |
+| Live webcam and Raspberry Pi CSI camera | Not yet validated |
+| NIR imaging and clinical use | Not validated |
 
-## Start on Windows
+The recorded checks are in [software_validation.json](results/software_validation.json) and [browser_validation.json](results/browser_validation.json). Implemented camera adapters are separate from demonstrated operation on physical hardware.
 
-1. Extract the entire project folder. Do not run it inside the ZIP archive.
-2. Install Python 3.10 or newer from [python.org](https://www.python.org/downloads/windows/) if Python is not already available.
-3. Double-click **START_WINDOWS.bat**. The launcher creates a local virtual environment, installs missing runtime dependencies, and opens the interface.
-4. Keep the terminal window open while using the application. The interface is at **http://localhost:8765**.
+This is a research prototype. OPEN/CLOSED image classification does not determine corneal exposure, clinical exposure grades, or eye injury. The default **5-second** alert threshold and **0.75** model-score cutoff are demonstration settings, not clinical limits. Model scores are uncalibrated.
 
-Equivalent commands from the project folder:
+## Quick start on Windows
+
+Requirements: Python 3.10 or newer and internet access for the initial dependency installation.
+
+1. Extract the complete repository into a folder.
+2. Double-click **START_WINDOWS.bat**.
+3. Keep the terminal window open while using the application.
+4. Open **http://localhost:8765** if the browser does not open automatically.
+
+The launcher creates a project virtual environment, installs missing NumPy/Pillow dependencies, and starts the application. Equivalent PowerShell commands, run from the repository directory:
 
 ```powershell
 py -3 -m venv .venv
@@ -25,130 +38,123 @@ py -3 -m venv .venv
 .\.venv\Scripts\python.exe app.py --open-browser
 ```
 
-Calling the virtual environment's Python directly avoids changing PowerShell's execution policy. Runtime dependencies are NumPy and Pillow; scikit-learn is needed only to repeat training.
+Using the virtual environment's Python directly does not require changing PowerShell's execution policy. scikit-learn is required only to repeat training.
 
-## Run a two-minute software check
+### Troubleshooting
 
-1. Open **Simulation** and choose **Closed**. The state should become CLOSED.
-2. Choose **Open** and wait five seconds. A review alert should appear.
-3. Acknowledge the alert. It must remain visible while the condition persists.
-4. Choose **Unable to assess**. The timer resets, while the previous alert remains visibly unresolved.
-5. Choose **Closed**. The observation changes and the demo alert clears. This is not confirmation of medical protection.
-6. Export the event log. Its source column must say `simulation` for these events.
-7. Switch to **Image test**. Choose one of the RGB eye images already supplied to the team, confirm the visible eye region, and click **Classify selected eye**. One image never starts the duration timer.
+- **Python is not found:** install a supported Python version from [python.org](https://www.python.org/downloads/windows/), reopen the terminal, and retry.
+- **Dependency installation fails:** keep the error text and check internet access. Rerun the dependency-installation command above after resolving the reported error.
+- **Port 8765 is already in use:** stop the earlier LidGuard process before starting another instance.
+- **The browser does not open:** enter `http://localhost:8765` manually while the server remains running.
+- **A camera cannot start:** confirm browser permission for a webcam; for a CSI camera, follow the [Raspberry Pi setup guide](docs/HARDWARE.md).
 
-## Live camera modes
+## Demonstrate the alert workflow
 
-### Computer camera
+No image dataset or camera is needed for **Simulation**. This mode uses manually selected states and is explicitly separate from image inference.
 
-Run the server on the same computer whose webcam you intend to use. Open the app at localhost, select **Computer camera**, and press **Start camera**. Allow the browser's camera permission.
+1. Select **Simulation**, then **Closed**.
+2. Select **Open** and wait five seconds for **Review requested**.
+3. Select **Acknowledge this event**. The event remains visible while the condition persists.
+4. Select **Unable to assess**. The continuous-open timer resets and the earlier alert remains unresolved.
+5. Select **Closed**. The demonstration alert clears.
+6. Export the event log. These rows are labeled `simulation`.
 
-Drag a tight rectangle around one eye and check **I can see one eye clearly in the selected region**. Keep the eye in that region. Clear the checkbox when the eye moves out of view. The app sends selected crops to the local server approximately twice per second.
+Acknowledgment records receipt of an event; it does not establish that the underlying condition has resolved. A simulated CLOSED transition is a software state change, not confirmation of clinical protection.
 
-The classifier has been evaluated only on the small provided RGB dataset. Webcam lighting, scale, framing, makeup, spectacles, and camera properties can differ. A functioning live image stream is not evidence that live classification is accurate. Record what happens on the actual camera, including errors and UNKNOWN outputs.
+## Image and camera inputs
 
-### Raspberry Pi CSI camera
+| Source | Input and behavior |
+| --- | --- |
+| Simulation | Manual OPEN/CLOSED/UNKNOWN states for checking the timer and alerts |
+| Image test | One RGB image, tightly cropped around one visible eye; a snapshot never accumulates exposure duration |
+| Computer camera | Browser webcam, a manually drawn eye region, and explicit operator confirmation |
+| Raspberry Pi camera | Optional Picamera2 adapter for a supported CSI camera on the computer running the server |
 
-The team's previously recorded board is Raspberry Pi 4 Model B, 2 GB, with a 5 MP CSI camera. The sensor model and NoIR status need to be identified from the actual part. The hardware was not available in the environment where this package was prepared.
+For **Image test**, select a suitable RGB eye image, confirm that one eye is visible in the selected region, and select **Classify selected eye**. Dataset images are not bundled with this repository.
 
-First complete OS setup and verify camera capture separately. See the Arabic [hardware and filming guide](docs/HARDWARE_AND_FILMING_AR.md).
+For **Computer camera**, run the server on the computer with the webcam, open the interface at localhost, select the source, and press **Start camera**. Allow the browser's camera permission. Draw a tight rectangle around one eye and check **I can see one eye clearly in the selected region**. Clear the confirmation if the eye moves out of view.
 
-On a supported current Raspberry Pi OS, use OS-managed camera dependencies:
+There is no validated automatic eye-localization or eye-presence detector. A textured background can be misclassified if operator confirmation remains enabled. Illumination, camera properties, framing, spectacles, and makeup can differ from the evaluation data. A working camera stream does not establish classification accuracy.
 
-```bash
-sudo apt update
-sudo apt install python3-numpy python3-pil python3-picamera2 rpicam-apps
-rpicam-hello --list-cameras
-rpicam-still -n -o test.jpg
-/usr/bin/python3 app.py --open-browser
-```
+For the CSI adapter and SSH port forwarding, see [docs/HARDWARE.md](docs/HARDWARE.md).
 
-Select **Raspberry Pi camera**, then **Start camera**. The adapter starts Picamera2 only after this explicit action, captures frames in memory, and does not require the CSI camera to appear in browser webcam permissions. It returns a readable error if Picamera2 or the camera is unavailable.
+## Processing and event behavior
 
-If using a virtual environment on Pi, create it with `--system-site-packages` to retain access to OS-managed Picamera2/libcamera. Do not replace camera packages with arbitrary pip versions. The direct `/usr/bin/python3` path above avoids that extra setup.
+- Images are decoded, converted to grayscale, resized to 30 x 18 pixels, scaled using training-set statistics, and classified with logistic regression.
+- The timer uses consecutive valid OPEN observations. Missing or stale observations reset continuity; an existing alert remains unresolved until a defined state transition or explicit reset.
+- A single image upload never establishes a duration.
+- Images are processed in memory and are not saved by the application. The runtime interface uses local assets and makes no external network calls; installing dependencies requires internet access.
+- Event records remain in memory until exported and are lost when the server stops. Source labels distinguish simulation, image uploads, and camera observations.
 
-The server listens on localhost. If the Pi has no display but SSH is already configured, forward its local app port from Windows:
+## RGB evaluation
 
-```powershell
-ssh -L 8765:127.0.0.1:8765 YOUR_PI_USERNAME@YOUR_PI_ADDRESS
-```
-
-Use the real Pi username/address. Keep this SSH session open, run the app on the Pi, and open `http://localhost:8765` on Windows. Select **Raspberry Pi camera** for CSI images. Selecting **Computer camera** would instead request the Windows computer's webcam. Do not run a second local app on the same port simultaneously.
-
-## Measured results
-
-The evaluation used the supplied **100-image RT-BENE RGB subset** (50 OPEN, 50 CLOSED). It used one fixed subject-disjoint split, with no hyperparameter search or choice of a favorable test seed.
+The evaluation uses a **100-image RT-BENE research subset**, containing 50 OPEN and 50 CLOSED images from 10 people. One fixed subject-disjoint split was used, with no hyperparameter search or selection of a favorable seed. The subset-selection method before this experiment was not documented.
 
 | Item | Result |
-|---|---|
-| Training | 79 images from 8 people |
-| Holdout test | 21 images from 2 different people (`s004`, `s015`) |
+| --- | --- |
+| Training partition | 79 images from 8 people |
+| Holdout partition | 21 images from 2 different people: s004 and s015 |
 | Subject overlap | 0 |
-| Fixed split | GroupShuffleSplit, 20% of subjects, seed 42 |
-| Features | 30 × 18 grayscale pixels, normalized to 0–1; StandardScaler fitted only on training images |
+| Split | GroupShuffleSplit, 20% of subjects, random seed 42 |
+| Features | 30 x 18 grayscale pixels divided by 255; StandardScaler fitted on training images only |
 | Classifier | Logistic regression, C=1, L2, balanced classes, liblinear |
-| Binary classification before abstention | 20 / 21 correct (95.24%) |
-| Runtime behavior with quality checks and score cutoff | **18 correct, 1 incorrect, 2 UNKNOWN** across all 21 test images |
-| Accuracy among the 19 classified images | 18 / 19 (94.74%) |
-| Classification coverage | 19 / 21 (90.48%) |
+| Binary classification before abstention | 20/21 correct (95.24%) |
+| Runtime result with quality checks and score cutoff | 18 correct, 1 incorrect, 2 UNKNOWN |
+| Accuracy among classified images | 18/19 (94.74%) |
+| Classification coverage | 19/21 (90.48%) |
 
-The two-person holdout is very small. These numbers do not establish performance on another camera, under NIR illumination, or in patients. The heuristic quality gates do not detect every missing-eye or occluded-eye situation.
+These results concern the recorded eye-crop experiment. A two-person holdout does not establish population, live-camera, NIR, device, or ICU performance. The quality gates are heuristic and do not provide a general occlusion or uncertainty detector.
 
-The earlier Orange results page is preserved under `reports/orange_results_reported.html`. It describes a **different** 71-image, five-fold evaluation. Its workflow and trained model were not included in the provided files, so those figures were not reproduced here. Do not compare the two headline accuracies as an improvement claim.
+Supporting files:
 
-### Reproduce training
+- [Metrics and recorded software versions](results/rgb_holdout_metrics.json)
+- [Per-image holdout predictions](results/rgb_holdout_predictions.json)
+- [Dataset filenames, hashes, and train/test membership](results/rgb_data_manifest.json)
 
-Training data are not redistributed in this repository. Use the team's original `RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0.zip` and preserve its filename or pass its actual location:
+### Earlier Orange experiment
+
+[The archived Orange report](reports/orange_results_reported.html) records a separate 71-image, five-fold image-embedding experiment. Its reported results are not the results of the classifier loaded by this application. The corresponding Orange workflow, trained estimator, fold assignments, and full preprocessing settings are not part of this release, so that experiment has not been reproduced here. Subject separation across its folds is undocumented. The two headline accuracies do not demonstrate an improvement because their evaluation protocols differ.
+
+## Tests and training
+
+Run the existing Python tests from the repository directory:
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -v
+```
+
+The tests cover the state machine, timer continuity, stale input, unresolved alerts, acknowledgment, source isolation, stale-source request rejection, snapshots, image decoding, and heuristic quality checks. They do not substitute for interactive browser or hardware testing.
+
+Training and evaluation scripts are included. **Reproducing the reported metrics requires the exact image subset identified by the SHA256 manifest**; dataset images are not redistributed. Source data and terms are available from the [RT-BENE authors](https://zenodo.org/records/3685316). Downloading the full source dataset alone does not recreate the selected subset automatically.
+
+After obtaining the documented subset, replace the example archive path below with its actual location:
 
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements-training.txt
-.\.venv\Scripts\python.exe train_baseline.py --zip "PATH_TO_RGB_ZIP"
+.\.venv\Scripts\python.exe train_baseline.py --zip "C:\datasets\RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0.zip"
 ```
 
-Run `python train_baseline.py --help` for the exact output arguments. The script produces the JSON model, metrics, file manifest with SHA256 hashes, and individual holdout predictions. The supplied model remains fitted to the training partition; holdout data are not used to refit it.
+The training script validates the expected subset shape and writes the numeric JSON model, metrics, provenance manifest, and per-image predictions. The model is fitted only to the training partition. It is not refitted using holdout observations. Dependency ranges are specified in the requirements files; exact evaluation versions are recorded in the metrics file.
 
-The current inference model uses JSON numeric arrays, not executable pickle objects. Model scores are uncalibrated and must not be read as clinical probabilities.
-
-## Software verification
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-The software tests cover timer continuity, stale camera input, unresolved alerts, acknowledgment, snapshot behavior, source separation, stale response rejection, image decoding, and basic quality rejection. See `results/software_validation.json` for the exact test count and execution record. Browser checks, when present, are documented separately in `results/browser_validation.json`.
-
-Automated software checks do not establish performance of a real webcam or a Raspberry Pi camera. The team's hardware integration, Windows environment, and live camera behavior require checks on the actual equipment.
-
-## Project map
+## Repository structure
 
 | Path | Purpose |
-|---|---|
+| --- | --- |
 | `app.py` | Application entry point |
 | `START_WINDOWS.bat` | Windows setup and launch helper |
+| `lidguard/` | Inference, state handling, HTTP service, and optional CSI capture |
 | `web/` | Local browser interface |
-| `lidguard/` | Inference, state handling, HTTP service, optional Pi capture |
-| `models/` | JSON model and data-use notice |
-| `train_baseline.py` | Reproducible baseline training |
-| `tests/` | Meaningful software checks |
-| `results/` | Evaluation, provenance manifest, validation outputs |
-| `reports/` | Previously reported Orange results, separated from the new baseline |
-| `docs/` | Arabic setup, submission, filming, and scientific references |
+| `models/` | Numeric JSON model and data attribution notice |
+| `train_baseline.py` | Fixed baseline training and evaluation |
+| `tests/` | Automated Python and API tests |
+| `results/` | Evaluation, provenance, and validation records |
+| `reports/` | Clearly labeled earlier experiment |
+| `docs/` | Hardware setup and scientific/technical references |
 
-## Data and reuse
+## Data attribution and limitations
 
-RT-BENE is attributed to Kevin Cortacero, Tobias Fischer and Yiannis Demiris (2019). Its source explicitly uses **CC BY-NC-SA 4.0** and prohibits commercial use. Preserve `models/NOTICE.txt` and consult the [original dataset page](https://zenodo.org/records/3685316) before reuse. This prototype is for research evaluation. Do not infer commercial permission for the trained model from the availability of this repository.
+RT-BENE is attributed to Kevin Cortacero, Tobias Fischer, and Yiannis Demiris (2019). The source dataset uses **CC BY-NC-SA 4.0** and explicitly excludes commercial use. Preserve [models/NOTICE.txt](models/NOTICE.txt) and review the upstream terms. Availability of this repository does not establish commercial permission for the trained artifact. No project-wide reuse license has been specified.
 
-The separately supplied PopEYE NIR archive is **not used by this RGB model**. Its locally labeled partial-opening subset is not a verified clinical ground truth. Dataset permissions, image labeling, and future commercial development need their own review.
+This release does not implement or validate clinical corneal-exposure grading, partial-opening measurement, dressing assessment, or treatment decisions. It does not use the separately considered PopEYE NIR dataset. Future work includes reliable eye localization, broader evaluation with people separated between partitions, live-camera validation, and clinical definition and validation of exposure-related outputs.
 
-No general open-source license is assigned here to the team's earlier work, branding, photographs, or supplied materials. The team controls its repository and submission. No raw patient data or credentials are needed to operate this demo.
-
-## Next validation steps
-
-1. Run and record the actual camera and Raspberry Pi integration, including failure cases.
-2. Collect consented, separately labeled development and test observations under the intended imaging conditions, with people separated between splits.
-3. Define partial opening and corneal visibility with clinical collaborators, then evaluate those outputs separately from OPEN/CLOSED image classification.
-4. Assess missing-eye detection, dressings and occlusion, false alerts, latency, and practical positioning.
-5. Evaluate NIR illumination and its safety before eye-directed use; then validate NIR data independently.
-6. Plan usability and prospective clinical evaluation with the required institutional approvals.
-
-References and the limits of each source are in [docs/REFERENCES.md](docs/REFERENCES.md).
+Scientific and engineering sources are listed in [docs/REFERENCES.md](docs/REFERENCES.md).

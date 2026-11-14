@@ -1,7 +1,7 @@
 {
   "evaluation_name": "One fixed subject-held-out RGB baseline evaluation",
   "created_utc": "2026-11-13T22:15:31+00:00",
-  "dataset": "User-supplied 100-image RT-BENE RGB subset; 50 open, 50 closed",
+  "dataset": "100-image RT-BENE research subset; 50 OPEN and 50 CLOSED",
   "split": {
     "method": "GroupShuffleSplit",
     "random_state": 42,

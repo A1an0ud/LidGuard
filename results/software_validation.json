@@ -2,11 +2,15 @@
   "test_command": "python -m unittest discover -s tests -v",
   "tests_run": 15,
   "result": "PASS",
-  "runtime_seconds": 0.531,
+  "runtime_seconds": 0.62,
   "scope": "Python local HTTP API, image decoding/classification determinism, heuristic quality rejection, source isolation, timer continuity, stale input, acknowledgment, unresolved alerts retained after evidence loss, and snapshot behavior",
   "hardware_tested": false,
   "live_webcam_tested": false,
   "pi_csi_camera_tested": false,
   "clinical_validation": false,
-  "important_limit": "Blank-image rejection and manual ROI confirmation do not constitute automatic eye-presence detection."
+  "important_limit": "Blank-image rejection and manual ROI confirmation do not constitute automatic eye-presence detection.",
+  "test_environment": {
+    "operating_system": "Linux",
+    "python": "3.12.14"
+  }
 }

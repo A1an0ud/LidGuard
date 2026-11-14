@@ -1,4 +1,4 @@
-"""Train one fixed baseline on the supplied RT-BENE RGB subset.
+"""Train one fixed baseline on the documented RT-BENE RGB evaluation subset.
 
 Usage: python train_baseline.py --zip /path/to/RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0.zip
 No hyperparameter search or seed selection. Held-out subjects never enter fitting.
@@ -63,7 +63,7 @@ def main():
             labels.append(1 if label_name == "open" else 0)
             groups.append(subject)
     if len(items) != 100 or len(set(groups)) != 10 or labels.count(1) != 50:
-        raise ValueError("This version expects the supplied 100-image, 10-subject, balanced RGB subset. Do not silently substitute another dataset.")
+        raise ValueError("Expected the documented 100-image, 10-subject balanced RT-BENE subset.")
     X = np.stack([features(image) for image in images])
     y = np.array(labels, dtype=int)
     groups = np.array(groups)
@@ -79,7 +79,7 @@ def main():
     metrics = {
         "evaluation_name": "One fixed subject-held-out RGB baseline evaluation",
         "created_utc": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "dataset": "User-supplied 100-image RT-BENE RGB subset; 50 open, 50 closed",
+        "dataset": "100-image RT-BENE research subset; 50 OPEN and 50 CLOSED",
         "split": {"method": "GroupShuffleSplit", "random_state": SEED, "test_fraction_of_subjects": 0.2, "train_subjects": sorted(set(groups[train])), "test_subjects": sorted(set(groups[test])), "train_images": int(len(train)), "test_images": int(len(test)), "subject_overlap": 0},
         "model": {"classifier": "LogisticRegression", "features": "30x18 grayscale pixels divided by 255, StandardScaler fitted on training images only", "C": 1.0, "solver": "liblinear", "penalty": "l2", "class_weight": "balanced", "max_iter": 2000, "random_state": SEED, "hyperparameter_search": False},
         "binary_holdout": {"accuracy": float(accuracy_score(y[test], predictions)), "balanced_accuracy": float(balanced_accuracy_score(y[test], predictions)), "auc_open": float(roc_auc_score(y[test], probability)), "confusion_matrix_order": ["CLOSED", "OPEN"], "confusion_matrix_rows_true_columns_predicted": confusion_matrix(y[test], predictions, labels=[0, 1]).tolist(), "per_class": {name: {"precision": float(precision[i]), "recall": float(recall[i]), "f1": float(f1[i]), "support": int(support[i])} for i, name in enumerate(["CLOSED", "OPEN"])}, "correct": int(np.sum(predictions == y[test])), "total": int(len(test))},
@@ -102,7 +102,7 @@ def main():
         heldout.append({"archive_path": items[idx]["archive_path"], "subject": items[idx]["subject"], "actual": items[idx]["label"], "binary_prediction": "OPEN" if predictions[j] else "CLOSED", "p_open_uncalibrated": float(probability[j]), "runtime_state": runtime_predictions[j]["state"], "runtime_quality": runtime_predictions[j]["quality"]})
     for idx, item in enumerate(items):
         item["split"] = "train" if idx in set(train.tolist()) else "test"
-    manifest = {"archive_name": args.zip.name, "archive_sha256": hashlib.sha256(args.zip.read_bytes()).hexdigest(), "total_images": len(items), "raw_images_included": False, "source_url": "https://zenodo.org/records/3685316", "license": "CC-BY-NC-SA-4.0", "selection_before_upload": "Not documented in supplied archive", "files": items}
+    manifest = {"archive_name": args.zip.name, "archive_sha256": hashlib.sha256(args.zip.read_bytes()).hexdigest(), "total_images": len(items), "raw_images_included": False, "source_url": "https://zenodo.org/records/3685316", "license": "CC-BY-NC-SA-4.0", "subset_selection_method": "The selection method for this subset was not documented.", "files": items}
     (output / "results" / "rgb_holdout_metrics.json").write_text(json.dumps(metrics, indent=2) + "\n", encoding="utf-8")
     (output / "results" / "rgb_holdout_predictions.json").write_text(json.dumps(heldout, indent=2) + "\n", encoding="utf-8")
     (output / "results" / "rgb_data_manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

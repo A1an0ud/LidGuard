@@ -39,6 +39,6 @@ exit /b 1
 :setup_failed
 echo.
 echo LidGuard could not complete setup or start. Keep the error above.
-echo Check README.md or send a screenshot of this window for help.
+echo Check the troubleshooting section in README.md. Copy the error text when reporting an issue.
 pause
 exit /b 1

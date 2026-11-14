@@ -1,10 +1,10 @@
 {
   "result": "NOT_EXECUTED",
-  "reason": "The local headless browser process could not launch in this workspace; the supported desktop input interface did not attach to Chromium; the cloud browser could not access the localhost server.",
+  "reason": "Interactive browser validation has not yet been completed for this release.",
   "javascript_syntax_check": "node --check web/app.js: PASS",
   "software_api_tests": "See software_validation.json: 15 tests passed.",
   "real_webcam_tested": false,
   "raspberry_pi_camera_tested": false,
   "windows_launcher_tested_on_windows": false,
-  "required_user_check": "Run the packaged application on the team laptop, verify the visible interface and image input, and then test the physical camera."
+  "pending_validation": "Verify interface interaction, image input, Windows startup, and physical camera capture on the target equipment."
 }
