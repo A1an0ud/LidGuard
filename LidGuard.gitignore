@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+.env.*
+data/
+private_data/
+*.zip
+test.jpg
+*.mp4
+*.mov
+*.avi
+lidguard_events*.csv
+.DS_Store
+Thumbs.db
