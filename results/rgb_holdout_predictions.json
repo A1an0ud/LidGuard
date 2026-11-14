@@ -1,0 +1,506 @@
+[
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_left_000026_rgb.png",
+    "subject": "s004",
+    "actual": "CLOSED",
+    "binary_prediction": "CLOSED",
+    "p_open_uncalibrated": 0.005912611769749933,
+    "runtime_state": "CLOSED",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 122.99,
+      "contrast_std": 18.16,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_left_001101_rgb.png",
+    "subject": "s004",
+    "actual": "CLOSED",
+    "binary_prediction": "CLOSED",
+    "p_open_uncalibrated": 0.012384687536815323,
+    "runtime_state": "CLOSED",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 113.41,
+      "contrast_std": 17.89,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_left_003028_rgb.png",
+    "subject": "s004",
+    "actual": "CLOSED",
+    "binary_prediction": "CLOSED",
+    "p_open_uncalibrated": 0.2773130152508853,
+    "runtime_state": "UNKNOWN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 130.52,
+      "contrast_std": 20.29,
+      "eye_presence_verified": false,
+      "reason": "ambiguous_model_score"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_right_000605_rgb.png",
+    "subject": "s004",
+    "actual": "CLOSED",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.7505280085898155,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 133.86,
+      "contrast_std": 32.13,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_right_002508_rgb.png",
+    "subject": "s004",
+    "actual": "CLOSED",
+    "binary_prediction": "CLOSED",
+    "p_open_uncalibrated": 0.04643458716996531,
+    "runtime_state": "CLOSED",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 132.89,
+      "contrast_std": 25.18,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_right_003734_rgb.png",
+    "subject": "s004",
+    "actual": "CLOSED",
+    "binary_prediction": "CLOSED",
+    "p_open_uncalibrated": 0.028393752292720485,
+    "runtime_state": "CLOSED",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 133.97,
+      "contrast_std": 29.28,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s015_left_000250_rgb.png",
+    "subject": "s015",
+    "actual": "CLOSED",
+    "binary_prediction": "CLOSED",
+    "p_open_uncalibrated": 9.30032619853064e-06,
+    "runtime_state": "CLOSED",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 137.06,
+      "contrast_std": 27.62,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s015_left_000624_rgb.png",
+    "subject": "s015",
+    "actual": "CLOSED",
+    "binary_prediction": "CLOSED",
+    "p_open_uncalibrated": 0.025922124295716616,
+    "runtime_state": "CLOSED",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 128.97,
+      "contrast_std": 27.01,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s015_left_000899_rgb.png",
+    "subject": "s015",
+    "actual": "CLOSED",
+    "binary_prediction": "CLOSED",
+    "p_open_uncalibrated": 4.065127999938465e-05,
+    "runtime_state": "CLOSED",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 128.94,
+      "contrast_std": 27.16,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s015_right_000482_rgb.png",
+    "subject": "s015",
+    "actual": "CLOSED",
+    "binary_prediction": "CLOSED",
+    "p_open_uncalibrated": 0.008274813620324017,
+    "runtime_state": "CLOSED",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 117.78,
+      "contrast_std": 24.17,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s015_right_000695_rgb.png",
+    "subject": "s015",
+    "actual": "CLOSED",
+    "binary_prediction": "CLOSED",
+    "p_open_uncalibrated": 0.382350419048298,
+    "runtime_state": "UNKNOWN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 112.84,
+      "contrast_std": 23.45,
+      "eye_presence_verified": false,
+      "reason": "ambiguous_model_score"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s004_left_000627_rgb.png",
+    "subject": "s004",
+    "actual": "OPEN",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.8953970854623226,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 120.71,
+      "contrast_std": 21.02,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s004_left_005114_rgb.png",
+    "subject": "s004",
+    "actual": "OPEN",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.9948433982902987,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 121.44,
+      "contrast_std": 20.47,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s004_left_005788_rgb.png",
+    "subject": "s004",
+    "actual": "OPEN",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.7785892085813279,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 114.76,
+      "contrast_std": 22.52,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s004_right_003754_rgb.png",
+    "subject": "s004",
+    "actual": "OPEN",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.8917812844355674,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 121.37,
+      "contrast_std": 21.76,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s004_right_005475_rgb.png",
+    "subject": "s004",
+    "actual": "OPEN",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.9965572782780179,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 134.62,
+      "contrast_std": 29.54,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s015_left_001127_rgb.png",
+    "subject": "s015",
+    "actual": "OPEN",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.9989113706209536,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 137.54,
+      "contrast_std": 26.87,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s015_left_001221_rgb.png",
+    "subject": "s015",
+    "actual": "OPEN",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.9999517757929623,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 149.23,
+      "contrast_std": 26.65,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s015_right_001289_rgb.png",
+    "subject": "s015",
+    "actual": "OPEN",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.9905479302903969,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 135.76,
+      "contrast_std": 26.14,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s015_right_002146_rgb.png",
+    "subject": "s015",
+    "actual": "OPEN",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.9999975500036555,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 106.64,
+      "contrast_std": 27.82,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  },
+  {
+    "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s015_right_002297_rgb.png",
+    "subject": "s015",
+    "actual": "OPEN",
+    "binary_prediction": "OPEN",
+    "p_open_uncalibrated": 0.9974778151089624,
+    "runtime_state": "OPEN",
+    "runtime_quality": {
+      "passed": true,
+      "checks": {
+        "minimum_resolution": true,
+        "illumination": true,
+        "contrast": true,
+        "not_mostly_clipped": true,
+        "operator_confirmed_eye_roi": true
+      },
+      "width": 60,
+      "height": 36,
+      "mean_brightness": 104.57,
+      "contrast_std": 33.06,
+      "eye_presence_verified": false,
+      "reason": "ok"
+    }
+  }
+]

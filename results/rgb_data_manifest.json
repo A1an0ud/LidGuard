@@ -1,0 +1,711 @@
+{
+  "archive_name": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0.zip",
+  "archive_sha256": "c8be14f0d3906d17c445309550fc51ef03a1e49d22dc8120af3fcf98e6d84986",
+  "total_images": 100,
+  "raw_images_included": false,
+  "source_url": "https://zenodo.org/records/3685316",
+  "license": "CC-BY-NC-SA-4.0",
+  "selection_before_upload": "Not documented in supplied archive",
+  "files": [
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s003_left_000025_rgb.png",
+      "sha256": "85cca253af889a4449e20d603e9c271045f7318ef0e6e517d8f119f1af8aa13b",
+      "label": "CLOSED",
+      "subject": "s003",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s003_left_001138_rgb.png",
+      "sha256": "d9f6dc1e8234bbbe51777ae658d519e39ad7f6da88ec90fd60af63afa46eb2d2",
+      "label": "CLOSED",
+      "subject": "s003",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s003_left_005467_rgb.png",
+      "sha256": "e583ce87e4a4d4cb884751ff7dd60942a40bdc3fa0715411945a1976e8580c47",
+      "label": "CLOSED",
+      "subject": "s003",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s003_left_006981_rgb.png",
+      "sha256": "6dff3c1fd13f93d7284a8f53eb79082604588f6d4e17207debe25ee39e9bd01d",
+      "label": "CLOSED",
+      "subject": "s003",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s003_right_000523_rgb.png",
+      "sha256": "4c612c853e20ab79b68c5db16b1e7224635c220868a4d61485a80aa02811b3f9",
+      "label": "CLOSED",
+      "subject": "s003",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_left_000026_rgb.png",
+      "sha256": "c13807b5e7e0c0b9fbf89d428ae5eca54a9d02d42bc7bb46b09fd974ba3fcb0c",
+      "label": "CLOSED",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_left_001101_rgb.png",
+      "sha256": "1e43a2e35d828479b221f5ee00464fb2b5333fe0b017bac197c628b873056f47",
+      "label": "CLOSED",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_left_003028_rgb.png",
+      "sha256": "d362491effd6dbb92855cbdcebf585ace00c5a6ffddeb0150f21edd5cc45b1c9",
+      "label": "CLOSED",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_right_000605_rgb.png",
+      "sha256": "5a9505c33551b9d90b1ebd0c57b325a0dd17968fcaf1e5e8286ae893000e054c",
+      "label": "CLOSED",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_right_002508_rgb.png",
+      "sha256": "2957f771c8759c48ef5e38606ad5584d8322748cf97c4cf20d5d4b95346496b7",
+      "label": "CLOSED",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s004_right_003734_rgb.png",
+      "sha256": "912fb5ca43d0f291d02f318b2f0d89e6d20df075d6adfd520cb722ccab339e3d",
+      "label": "CLOSED",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s005_left_000198_rgb.png",
+      "sha256": "1c69c158de012bdf507884e669ca9f864f954c0d49861060777ddc8a9920535d",
+      "label": "CLOSED",
+      "subject": "s005",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s005_left_001339_rgb.png",
+      "sha256": "de9c78f70df8127dcdcf0c4012e89df7e3e84899bf0b99637685a49af14bde95",
+      "label": "CLOSED",
+      "subject": "s005",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s005_left_003196_rgb.png",
+      "sha256": "391ebc073987e28ea6bd8f1990acb04cbea02ba7756c1cda2d78b4bd3062c19d",
+      "label": "CLOSED",
+      "subject": "s005",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s005_right_000554_rgb.png",
+      "sha256": "e3ff5485c6583de78e776388394c454b283b445e5dd05d17072adeac91031898",
+      "label": "CLOSED",
+      "subject": "s005",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s005_right_002120_rgb.png",
+      "sha256": "866b2cd3708154c5878a8d555358efac4b5c26edcc4d5a389216242f9dfbc87b",
+      "label": "CLOSED",
+      "subject": "s005",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s007_left_000266_rgb.png",
+      "sha256": "223123fc81b8314f47544ea4fd3702cc70cc3c770ec30114e0ca95c6685bd901",
+      "label": "CLOSED",
+      "subject": "s007",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s007_left_002495_rgb.png",
+      "sha256": "2da9d934a958712684fc3843e5f0e4289ec7b8dc9d0f3215297691d94d7500d7",
+      "label": "CLOSED",
+      "subject": "s007",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s007_right_001591_rgb.png",
+      "sha256": "98f091bf28fa73a7b41a6b691753da03a56bcbc0ec1f2b648009669fc7960382",
+      "label": "CLOSED",
+      "subject": "s007",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s007_right_003242_rgb.png",
+      "sha256": "65b5e36347e1c173acef24396c364fad275dda7e92fe4197e131314e23ae4024",
+      "label": "CLOSED",
+      "subject": "s007",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s007_right_005538_rgb.png",
+      "sha256": "eba7846d6e47967bc83d551f07fe45f9fa12d4b4d8730117aed5dbb975c9b695",
+      "label": "CLOSED",
+      "subject": "s007",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s008_left_000038_rgb.png",
+      "sha256": "9c35db24f5b34dc7aa5d1627a220aefbd1a47f884f8792634b393ad947e50075",
+      "label": "CLOSED",
+      "subject": "s008",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s008_left_005084_rgb.png",
+      "sha256": "a815f06d21f90db0bc0f7445d2c46bd2afdc1315fefc0936ef9aa144bba36df1",
+      "label": "CLOSED",
+      "subject": "s008",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s008_left_012019_rgb.png",
+      "sha256": "1faed9a25c191b0615d4e4fdf50b25b0caf69523346b64e55ac0d6e1af7687d4",
+      "label": "CLOSED",
+      "subject": "s008",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s008_right_005200_rgb.png",
+      "sha256": "a2ba13a67db28d330304a74171a92fc67e209b5957ea2e6a82c16de4968a0558",
+      "label": "CLOSED",
+      "subject": "s008",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s008_right_012107_rgb.png",
+      "sha256": "f7900f0a0e948a297b8a257d4a55ae8f1de5bd50c32ba24217b46cf61563d83c",
+      "label": "CLOSED",
+      "subject": "s008",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s009_left_000011_rgb.png",
+      "sha256": "4fb496a09ff44f1f04bc7d6e618516f1e5846cf00fa87b59c2099531114a4cf9",
+      "label": "CLOSED",
+      "subject": "s009",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s009_left_000836_rgb.png",
+      "sha256": "e6d9d66e477f310a99901e0c5be3f50b258d13acbb1aa39429850cfe0d3250d9",
+      "label": "CLOSED",
+      "subject": "s009",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s009_left_002537_rgb.png",
+      "sha256": "ee1bc8872a1f2f175f545ed8b27661a04ce2666383294d65f26b1a0ed1c6c442",
+      "label": "CLOSED",
+      "subject": "s009",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s009_left_002939_rgb.png",
+      "sha256": "16e03ff1ca5558c22b527733d49577a2fe0afa23c111330e11f8ab934f9b9623",
+      "label": "CLOSED",
+      "subject": "s009",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s009_right_000641_rgb.png",
+      "sha256": "ed1352b7cca51d5f6e992a97df58075139a02db4506c61e56caf5f3988ee07a4",
+      "label": "CLOSED",
+      "subject": "s009",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s012_left_000036_rgb.png",
+      "sha256": "e818089f0e632bd693b2dc51bdd9d729a5b0ea45a8654921a653c46056d21a8e",
+      "label": "CLOSED",
+      "subject": "s012",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s012_left_002746_rgb.png",
+      "sha256": "3567d4c4e38486cda1c10b37c8f19d62a6af66057d6d92255a0a261413429108",
+      "label": "CLOSED",
+      "subject": "s012",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s012_left_003353_rgb.png",
+      "sha256": "1923f95f152b865d9cc418e2a48a68851f812b19788d4085d91c8f4083a5f46b",
+      "label": "CLOSED",
+      "subject": "s012",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s012_left_004385_rgb.png",
+      "sha256": "a0ad92f949b51378154c87818852c1e0423de5b7490af8529fd0add24dc8ae1f",
+      "label": "CLOSED",
+      "subject": "s012",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s012_right_001598_rgb.png",
+      "sha256": "1e163214d5c86ca70f99971befcd23df1c3f4c3cfacb5c238db01790856668e9",
+      "label": "CLOSED",
+      "subject": "s012",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s014_left_000004_rgb.png",
+      "sha256": "3c6643a87123221d57a07780fe3935f6bb80011c147f0f1e2bae7d2f94044f30",
+      "label": "CLOSED",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s014_left_001577_rgb.png",
+      "sha256": "6d2c79ee8dffb38df02969f342024e54013593ce52dbce9de07b8b7f6153b4fa",
+      "label": "CLOSED",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s014_left_002446_rgb.png",
+      "sha256": "7b532a3722fd557ef1baa0dee1e560637180d938f58b1806ddfad144db5c8da8",
+      "label": "CLOSED",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s014_left_003348_rgb.png",
+      "sha256": "a51506044b73b5a7b8db9591dc46da17ff2b0876a3db760e7045c1af2166939b",
+      "label": "CLOSED",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s014_right_000802_rgb.png",
+      "sha256": "2742dacb7602e477454459f0ecdb09f24792eff57863a68ac1fef42454298545",
+      "label": "CLOSED",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s014_right_002930_rgb.png",
+      "sha256": "de8508b1190facb0143c8b57c0f24c196dacc963737776e2f3b590e6c767e598",
+      "label": "CLOSED",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s015_left_000250_rgb.png",
+      "sha256": "36338d340a4fe908523bb2e500e02044c1e33ebe3c3b348d4a4d46996c388c46",
+      "label": "CLOSED",
+      "subject": "s015",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s015_left_000624_rgb.png",
+      "sha256": "1197e0983a497192aca05b9887a78a6ef33ffa06ef9c7bdd23ae6f64b7ca60f7",
+      "label": "CLOSED",
+      "subject": "s015",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s015_left_000899_rgb.png",
+      "sha256": "ba48e4187dd9a08d1b4a1a80542fba2f156f8089b689fcc7125ee605aad79e18",
+      "label": "CLOSED",
+      "subject": "s015",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s015_right_000482_rgb.png",
+      "sha256": "b1b5aaa038f8ad87a461e05e34e394bfd373ec0ab092b43a60ccabaec54274f0",
+      "label": "CLOSED",
+      "subject": "s015",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s015_right_000695_rgb.png",
+      "sha256": "641d7a6a1ef7fa23b7312a8299beb1cbaca44f9dd41be1d130498945b77f1f39",
+      "label": "CLOSED",
+      "subject": "s015",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s016_left_000182_rgb.png",
+      "sha256": "fda1331792bce2009a2dc12f8fddefb8401f39071bd49ec5bf537cb2e08407fb",
+      "label": "CLOSED",
+      "subject": "s016",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s016_left_007147_rgb.png",
+      "sha256": "0d535aa3b82d2e105320c9bc09a24d9dff417f65bac4b266fd8beb80600cd73c",
+      "label": "CLOSED",
+      "subject": "s016",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/closed/rgb_rtbene_closed__s016_right_003466_rgb.png",
+      "sha256": "af6ee62b7a88fe335cd9bafe3c2f425a3eab5e9c905bef03c4cd07addca351c8",
+      "label": "CLOSED",
+      "subject": "s016",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s003_left_009171_rgb.png",
+      "sha256": "c0d9b35f6f6bac0568f9a4c10f784e41c1af07c4fdae1bcf448e04d80d8b5098",
+      "label": "OPEN",
+      "subject": "s003",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s003_left_011976_rgb.png",
+      "sha256": "bd3477060542883712eaf2c46458636cf61f014f0773c0bc0562966086832d64",
+      "label": "OPEN",
+      "subject": "s003",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s003_left_014221_rgb.png",
+      "sha256": "1c968d37b0ffc59156c1b1e4af12ea67d65de341bf26236a9beab65cca1da2f8",
+      "label": "OPEN",
+      "subject": "s003",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s003_right_010382_rgb.png",
+      "sha256": "ee295acec230274adeb8785e55fcd1e0cc9516057787214c477a2f97be5e17b6",
+      "label": "OPEN",
+      "subject": "s003",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s003_right_013133_rgb.png",
+      "sha256": "402fe9c78bef34248048ae5492a6f93604b52e662597b4bda6c14e53da6546d4",
+      "label": "OPEN",
+      "subject": "s003",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s004_left_000627_rgb.png",
+      "sha256": "39a0c1cf2b1904c0919174474fd4f7fde9beb663bf2627de508a38bc4998d9b3",
+      "label": "OPEN",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s004_left_005114_rgb.png",
+      "sha256": "673c9b35d23f19afc953b32a01a2c7358637369d2aabc146101d73d6d7d1c03a",
+      "label": "OPEN",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s004_left_005788_rgb.png",
+      "sha256": "e1b7e23499c8a6283ccfa491cf0ca37ce9146241ab1884bc590c4f3638918cd7",
+      "label": "OPEN",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s004_right_003754_rgb.png",
+      "sha256": "5dac582901e535c6e714726856fafa9312b04ecc47dd26a1b220b8304a0eee5c",
+      "label": "OPEN",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s004_right_005475_rgb.png",
+      "sha256": "1b9687a166e86f51ad2a73ea905ffa90e37cdc42ef9735300fdec5258859d664",
+      "label": "OPEN",
+      "subject": "s004",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s005_left_000420_rgb.png",
+      "sha256": "b72a65c944360886f0b093935303578ce275a81311332a8565fb9c32ea7877ec",
+      "label": "OPEN",
+      "subject": "s005",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s005_left_001616_rgb.png",
+      "sha256": "853c0f8e6f853ec6afaeec47e9d6b05e34cf9f2205ca4763f21922f2e8a95daf",
+      "label": "OPEN",
+      "subject": "s005",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s005_left_002201_rgb.png",
+      "sha256": "69151a825b2e780f9cf53b72e3d76a91b915fb14d30ed5bb385e5ce53efb7884",
+      "label": "OPEN",
+      "subject": "s005",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s005_right_000104_rgb.png",
+      "sha256": "2a6880943fd40babe2710c1f73a00cde2444f8c6db1d86ae207b0945bb45c3d8",
+      "label": "OPEN",
+      "subject": "s005",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s005_right_001920_rgb.png",
+      "sha256": "cb96a0ac530f9d1a1c12285eaa7ccd8e96de1f4dd5d03c81d277c067dfc3a36c",
+      "label": "OPEN",
+      "subject": "s005",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s007_left_000199_rgb.png",
+      "sha256": "7eaad2e7d205e662eee86675928a7383febde75b4d8897f3c28cb0dbe05e8c7f",
+      "label": "OPEN",
+      "subject": "s007",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s007_left_002957_rgb.png",
+      "sha256": "713370cdd8f983d94585535d31443c0ec05691319fe1c595e9f59c36b497a768",
+      "label": "OPEN",
+      "subject": "s007",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s007_left_005814_rgb.png",
+      "sha256": "8c22cb4ffbd6ca42f7bac56a79cf37945e3f7b477e9687b7e85be55795fcb454",
+      "label": "OPEN",
+      "subject": "s007",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s007_right_000021_rgb.png",
+      "sha256": "894c00f320c09d85f088ff00dc88326565c13f86bc1e2d8c83d715f54c96920e",
+      "label": "OPEN",
+      "subject": "s007",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s007_right_007143_rgb.png",
+      "sha256": "fb36c0250348d70c160fcd453edb55e270707e614765f7db554bbf7cf7d69215",
+      "label": "OPEN",
+      "subject": "s007",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s008_left_002000_rgb.png",
+      "sha256": "10b5e2099ed37dac4c1a482187cc7625eba96cb465973241100ad77ee8595405",
+      "label": "OPEN",
+      "subject": "s008",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s008_left_003226_rgb.png",
+      "sha256": "ce7d4f4baba043599300a5d693215cbe10fd9e94c2288dfcf5638dcec8610c5c",
+      "label": "OPEN",
+      "subject": "s008",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s008_left_003558_rgb.png",
+      "sha256": "6c92812613f23d49e166aeb384155090abe4d465e6c5af798218a6d86dbaa202",
+      "label": "OPEN",
+      "subject": "s008",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s008_left_007760_rgb.png",
+      "sha256": "5d88979ed89d3c292fa41722cb544b2ab77ebebe0155f18d0a92806eb6989b00",
+      "label": "OPEN",
+      "subject": "s008",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s008_left_011653_rgb.png",
+      "sha256": "2e0b51d294b7997749bcdeb5e12a570fa78431c68356f597c9fca72cf68a4f50",
+      "label": "OPEN",
+      "subject": "s008",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s009_left_002340_rgb.png",
+      "sha256": "2f604023f66078a38c464e6cdc921842676228be738f2617ec13f5d9803239b5",
+      "label": "OPEN",
+      "subject": "s009",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s009_left_005214_rgb.png",
+      "sha256": "14b6c51b3ed9af9add605b18f47479135f532efc18308d72397dc62610fa26ec",
+      "label": "OPEN",
+      "subject": "s009",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s009_left_009445_rgb.png",
+      "sha256": "d3be399bec0646dbd01247a2caa3ece865b6d6a14675394c5ce4923d33c8df8c",
+      "label": "OPEN",
+      "subject": "s009",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s009_left_012969_rgb.png",
+      "sha256": "d3ccbd1e2bed529d01ff2ae81aefed92b6b628669e14ce64ab38712a2e2a45d0",
+      "label": "OPEN",
+      "subject": "s009",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s009_left_013493_rgb.png",
+      "sha256": "4d60c8714e08171c23308f5b9d60f655a7e13049785b9df017c2fa4e3022a469",
+      "label": "OPEN",
+      "subject": "s009",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s012_left_000378_rgb.png",
+      "sha256": "787a55559d4dfe463e2cfcdc5083a772c119684b1f949d94fed5f900ac484598",
+      "label": "OPEN",
+      "subject": "s012",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s012_left_000449_rgb.png",
+      "sha256": "43dfc8e0b8afc67b0778d1e9ed8f3edc5f6f3b74fcd896302e3f4d770b71e4d8",
+      "label": "OPEN",
+      "subject": "s012",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s012_left_002105_rgb.png",
+      "sha256": "acc471093c301656da2a82535a461b7f86ad73edcbb9d3f1920780c8cb0c904f",
+      "label": "OPEN",
+      "subject": "s012",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s012_right_002825_rgb.png",
+      "sha256": "6f77163581815b6d8e36b0a2e9accb53d76357bd6ab7219636f679c8f62eea39",
+      "label": "OPEN",
+      "subject": "s012",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s012_right_004511_rgb.png",
+      "sha256": "fc8a24e6f587a22e54c968e5445e01f6535cb29a24e089c2d3a1426ea9f290fc",
+      "label": "OPEN",
+      "subject": "s012",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s014_left_000410_rgb.png",
+      "sha256": "d2ad853282cdc74f6a185dd83482c68dc703abc55a2c07bd565f3e157a40b399",
+      "label": "OPEN",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s014_left_001441_rgb.png",
+      "sha256": "da22ced4a7fa4362eaf13f88df3275a6d0694999a6b47ea808a237804b1e0b8e",
+      "label": "OPEN",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s014_left_002319_rgb.png",
+      "sha256": "cf6c18e214c41c8bc465d8b5e9dfdd9719d8c844b96e5fa6c7ea6096d3a47e32",
+      "label": "OPEN",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s014_left_002983_rgb.png",
+      "sha256": "f5b3a0abe1b2df6513dea0433e1597af295e1d263bfaebcdfdb8f0032e1f2341",
+      "label": "OPEN",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s014_left_004297_rgb.png",
+      "sha256": "fde1d7479ec5396e7c20448102abc96291db5414ce9601f64b5b0bd193e32cf6",
+      "label": "OPEN",
+      "subject": "s014",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s015_left_001127_rgb.png",
+      "sha256": "ab8745c69f24ec853ef73114df2080b3698fcbb8f058a6e5c45724990b5c1a54",
+      "label": "OPEN",
+      "subject": "s015",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s015_left_001221_rgb.png",
+      "sha256": "f973b50c8b426a1331d8ebe8aa81b5a7509c34aefcea226327dc1b529edbf34e",
+      "label": "OPEN",
+      "subject": "s015",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s015_right_001289_rgb.png",
+      "sha256": "dfec4d07e46c5b83a5ca627539ef0030bc6232e5f02e96864773230dc213e578",
+      "label": "OPEN",
+      "subject": "s015",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s015_right_002146_rgb.png",
+      "sha256": "000e4fd35deaf637a1be16b4f594cafc4ea32fea8afcc17161d868dfa41540f4",
+      "label": "OPEN",
+      "subject": "s015",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s015_right_002297_rgb.png",
+      "sha256": "a96c894def4da42e4f424fa92cdcd3747965f5a8ce1611912c8908b4cce7f896",
+      "label": "OPEN",
+      "subject": "s015",
+      "split": "test"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s016_left_001434_rgb.png",
+      "sha256": "9ff367554ac18cb32a787f9463020bbe9f53f25b36aee199fd4e84061cede860",
+      "label": "OPEN",
+      "subject": "s016",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s016_left_003999_rgb.png",
+      "sha256": "2bdbc461dd12f11a934537439d17146e7cb3ce65060617ab4325d42c2f378a2b",
+      "label": "OPEN",
+      "subject": "s016",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s016_left_005573_rgb.png",
+      "sha256": "5c62fdd3fb6069ec735ceed84e2bb15d713100cc3661f8faf0f79b1ec42c105f",
+      "label": "OPEN",
+      "subject": "s016",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s016_right_002589_rgb.png",
+      "sha256": "d076790149128e15cf1f4e8e263c63c0ce0c27b06b50004a8c0bbceb218a6ecb",
+      "label": "OPEN",
+      "subject": "s016",
+      "split": "train"
+    },
+    {
+      "archive_path": "RGB_RT-BENE_NONCOMMERCIAL_CC-BY-NC-SA-4.0/open/rgb_rtbene_open__s016_right_005909_rgb.png",
+      "sha256": "d6316af1ea6efc7191ae1ae4031cbcee0c24cec1d9623485abe701f5953c3883",
+      "label": "OPEN",
+      "subject": "s016",
+      "split": "train"
+    }
+  ]
+}

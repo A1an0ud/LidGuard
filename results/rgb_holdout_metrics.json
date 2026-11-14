@@ -1,0 +1,97 @@
+{
+  "evaluation_name": "One fixed subject-held-out RGB baseline evaluation",
+  "created_utc": "2026-11-13T22:15:31+00:00",
+  "dataset": "User-supplied 100-image RT-BENE RGB subset; 50 open, 50 closed",
+  "split": {
+    "method": "GroupShuffleSplit",
+    "random_state": 42,
+    "test_fraction_of_subjects": 0.2,
+    "train_subjects": [
+      "s003",
+      "s005",
+      "s007",
+      "s008",
+      "s009",
+      "s012",
+      "s014",
+      "s016"
+    ],
+    "test_subjects": [
+      "s004",
+      "s015"
+    ],
+    "train_images": 79,
+    "test_images": 21,
+    "subject_overlap": 0
+  },
+  "model": {
+    "classifier": "LogisticRegression",
+    "features": "30x18 grayscale pixels divided by 255, StandardScaler fitted on training images only",
+    "C": 1.0,
+    "solver": "liblinear",
+    "penalty": "l2",
+    "class_weight": "balanced",
+    "max_iter": 2000,
+    "random_state": 42,
+    "hyperparameter_search": false
+  },
+  "binary_holdout": {
+    "accuracy": 0.9523809523809523,
+    "balanced_accuracy": 0.9545454545454546,
+    "auc_open": 1.0,
+    "confusion_matrix_order": [
+      "CLOSED",
+      "OPEN"
+    ],
+    "confusion_matrix_rows_true_columns_predicted": [
+      [
+        10,
+        1
+      ],
+      [
+        0,
+        10
+      ]
+    ],
+    "per_class": {
+      "CLOSED": {
+        "precision": 1.0,
+        "recall": 0.9090909090909091,
+        "f1": 0.9523809523809523,
+        "support": 11
+      },
+      "OPEN": {
+        "precision": 0.9090909090909091,
+        "recall": 1.0,
+        "f1": 0.9523809523809523,
+        "support": 10
+      }
+    },
+    "correct": 20,
+    "total": 21
+  },
+  "limitations": [
+    "Only 100 selected images from 10 people; held-out sample is very small.",
+    "No cross-camera, NIR, ICU-patient or clinical validation.",
+    "Subject-independent within this subset does not establish population generalization.",
+    "This baseline differs from the previously reported Orange image-embedding experiment on 71 images.",
+    "No segmentation, partial-opening or clinical corneal-exposure labels.",
+    "Model score and alert timing are uncalibrated engineering demonstration settings."
+  ],
+  "runtime_versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scikit_learn": "1.8.0",
+    "Pillow": "13.0.0"
+  },
+  "runtime_abstention_holdout": {
+    "minimum_score": 0.75,
+    "manual_roi_confirmed_for_dataset_crops": true,
+    "classified_images": 19,
+    "unknown_images": 2,
+    "coverage": 0.9047619047619048,
+    "correct_among_classified": 18,
+    "accuracy_among_classified": 0.9473684210526315,
+    "note": "Quality gates and score abstention are heuristic; this is not a clinical uncertainty validation."
+  }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Prototype: Eye State Detection (Open / Closed)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--tx:#14202e;--mut:#5b6b7c;--bd:#dfe6ee;--ac:#0f766e;--cl:#2d9cdb;--op:#e5533d;--ok:#16a34a;--bad:#dc2626;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1720;--card:#18232f;--tx:#e8eef5;--mut:#9fb0c1;--bd:#2a3a4a;--ac:#2dd4bf;--ok:#4ade80;--bad:#f87171}}
+:root[data-theme="dark"]{--bg:#0f1720;--card:#18232f;--tx:#e8eef5;--mut:#9fb0c1;--bd:#2a3a4a;--ac:#2dd4bf;--ok:#4ade80;--bad:#f87171}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Inter,system-ui,Arial,sans-serif;line-height:1.7}
+main{max-width:920px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:1.6rem;margin:.2em 0}h2{font-size:1.2rem;margin:0 0 12px;color:var(--ac)}
+.sub{color:var(--mut);margin:0 0 20px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px;margin-bottom:16px}
+.flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.step{background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:8px 12px;font-size:.92rem}
+.step small{display:block;color:var(--mut);font-size:.78rem}
+.arr{color:var(--mut)}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi{background:var(--bg);border-radius:10px;padding:12px;text-align:center}
+.kpi b{display:block;font-size:1.5rem;color:var(--ac)}.kpi span{color:var(--mut);font-size:.85rem}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:480px;text-align:center}
+th,td{padding:8px;border-bottom:1px solid var(--bd)}th{color:var(--mut);font-weight:700;font-size:.85rem}
+td.best{color:var(--ok);font-weight:700}
+.bars{display:grid;gap:8px}.row{display:grid;grid-template-columns:130px 1fr 52px;gap:8px;align-items:center;font-size:.9rem}
+.track{background:var(--bg);border-radius:6px;height:16px;overflow:hidden}.fill{height:100%;background:var(--ac);border-radius:6px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.tabs button{font:inherit;border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:8px;padding:6px 14px;cursor:pointer}
+.tabs button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+.cm{display:grid;grid-template-columns:auto 1fr 1fr;gap:6px;max-width:420px;margin:0 auto;text-align:center}
+.cm div{padding:14px 6px;border-radius:8px}.h{color:var(--mut);font-size:.82rem;padding:6px}
+.tp{background:rgba(22,163,74,.18)}.er{background:rgba(220,38,38,.16)}.cm .n{font-size:1.6rem;font-weight:700;display:block}
+.note{font-size:.88rem;color:var(--mut)}
+</style>
+</head>
+<body>
+<main>
+<h1>👁️ Eye State Detection: Open vs Closed</h1>
+<p class="sub">A machine-learning prototype using image embeddings, built on the RT-BENE dataset and implemented in Orange Data Mining.</p>
+
+<section class="card">
+<h2>Algorithm Pipeline</h2>
+<div class="flow">
+<div class="step">Eye images<small>Import Images</small></div><span class="arr">→</span>
+<div class="step">Feature extraction<small>Image Embedding</small></div><span class="arr">→</span>
+<div class="step">Train 4 classifiers<small>LR · SVM · RF · kNN</small></div><span class="arr">→</span>
+<div class="step">Evaluation<small>5-fold stratified cross validation</small></div><span class="arr">→</span>
+<div class="step">Output<small>Open / Closed</small></div>
+</div>
+<p class="note" style="margin-top:12px">Classifier settings: Logistic Regression (L2) · SVM (RBF kernel, C=1) · Random Forest (100 trees) · kNN (k=5). Evaluated on 71 images (36 closed, 35 open).</p>
+</section>
+
+<section class="card">
+<h2>Key Results</h2>
+<div class="kpis">
+<div class="kpi"><b>88.7%</b><span>Highest accuracy (CA): Logistic Regression</span></div>
+<div class="kpi"><b>0.974</b><span>Highest AUC: SVM</span></div>
+<div class="kpi"><b>0.776</b><span>Highest MCC: Logistic Regression</span></div>
+<div class="kpi"><b>91.7%</b><span>Closed-eye recall: LR &amp; kNN</span></div>
+</div>
+</section>
+
+<section class="card">
+<h2>Model Comparison</h2>
+<div class="scroll"><table id="t"></table></div>
+<p class="note" style="margin-top:10px">Metrics are computed for the “closed” class. The best value in each column is shown in green.</p>
+</section>
+
+<section class="card">
+<h2>Accuracy (CA) per Model</h2>
+<div class="bars" id="bars"></div>
+</section>
+
+<section class="card">
+<h2>Confusion Matrix</h2>
+<div class="tabs" id="tabs"></div>
+<div class="cm" id="cm"></div>
+<p class="note" id="cmn" style="text-align:center;margin-top:12px"></p>
+</section>
+
+<section class="card">
+<h2>Conclusion</h2>
+<p>All four models performed similarly (accuracy 85.9% to 88.7%, AUC 0.928 to 0.974), showing that image-embedding features separate open from closed eyes well. Logistic Regression led in accuracy and MCC, while SVM led in AUC.</p>
+<p class="note">Note: results come from cross validation on 71 images, a small sample, so they should be confirmed on a larger test set.</p>
+</section>
+</main>
+<script>
+const M={"Logistic Regression":{auc:.969,ca:.887,f1:.892,p:.868,r:.917,mcc:.776,cm:[33,3,5,30]},
+"SVM":{auc:.974,ca:.859,f1:.857,p:.882,r:.833,mcc:.720,cm:[30,6,4,31]},
+"Random Forest":{auc:.928,ca:.873,f1:.873,p:.886,r:.861,mcc:.747,cm:[31,5,4,31]},
+"kNN":{auc:.959,ca:.873,f1:.880,p:.846,r:.917,mcc:.749,cm:[33,3,6,29]}};
+const K=[["auc","AUC"],["ca","CA"],["f1","F1"],["p","Precision"],["r","Recall"],["mcc","MCC"]];
+const best={};K.forEach(([k])=>best[k]=Math.max(...Object.values(M).map(m=>m[k])));
+document.getElementById('t').innerHTML='<tr><th>Model</th>'+K.map(k=>'<th>'+k[1]+'</th>').join('')+'</tr>'+
+Object.entries(M).map(([n,m])=>'<tr><td dir="ltr">'+n+'</td>'+K.map(([k])=>'<td class="'+(m[k]===best[k]?'best':'')+'">'+m[k].toFixed(3)+'</td>').join('')+'</tr>').join('');
+document.getElementById('bars').innerHTML=Object.entries(M).map(([n,m])=>'<div class="row"><span dir="ltr">'+n+'</span><div class="track"><div class="fill" style="width:'+(m.ca*100)+'%"></div></div><b>'+(m.ca*100).toFixed(1)+'%</b></div>').join('');
+function show(n){
+ const [a,b,c,d]=M[n].cm;
+ document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on',x.dataset.n===n));
+ document.getElementById('cm').innerHTML='<div class="h"></div><div class="h">Predicted: closed</div><div class="h">Predicted: open</div>'+
+ '<div class="h">Actual: closed</div><div class="tp"><span class="n">'+a+'</span>Correct</div><div class="er"><span class="n">'+b+'</span>Error</div>'+
+ '<div class="h">Actual: open</div><div class="er"><span class="n">'+c+'</span>Error</div><div class="tp"><span class="n">'+d+'</span>Correct</div>';
+ document.getElementById('cmn').textContent=n+' classified '+(a+d)+' of 71 images correctly ('+((a+d)/71*100).toFixed(1)+'%).';
+}
+document.getElementById('tabs').innerHTML=Object.keys(M).map(n=>'<button data-n="'+n+'" dir="ltr">'+n+'</button>').join('');
+document.querySelectorAll('#tabs button').forEach(b=>b.onclick=()=>show(b.dataset.n));
+show("Logistic Regression");
+</script>
+</body>
+</html>

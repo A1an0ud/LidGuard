@@ -1,0 +1,20 @@
+LidGuard RGB baseline model: research demonstration only.
+
+The model was fitted to the user-provided 100-image subset of RT-BENE.
+RT-BENE dataset: Kevin Cortacero, Tobias Fischer, Yiannis Demiris (2019).
+Source: https://zenodo.org/records/3685316
+Paper: RT-BENE: A Dataset and Baselines for Real-Time Blink Estimation in
+Natural Environments, ICCV Workshops 2019.
+Dataset license: Creative Commons Attribution-NonCommercial-ShareAlike 4.0.
+License: https://creativecommons.org/licenses/by-nc-sa/4.0/
+The source explicitly excludes commercial use. No raw dataset images are
+redistributed in this package. Do not infer commercial permission for this
+trained artifact. Preserve this notice and review upstream terms before reuse.
+
+This package does not assign an open-source license to the team's original
+work, earlier results, photographs, branding or other supplied materials.
+
+The PopEYE NIR archive supplied separately was not used to train this model.
+PopEYE source: https://zenodo.org/records/18595048
+PopEYE license: CC BY 4.0. Its original labels do not include the locally
+created partial_opening_reviewer_flagged category.

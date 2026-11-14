@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>LidGuard | Engineering Prototype</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 24C14 8 34 8 44 24C34 40 14 40 4 24Z"/><circle cx="24" cy="24" r="8"/><path d="M24 2v6M24 40v6"/></svg><div><h1>LidGuard</h1><p>Eye-state monitoring proof of concept</p></div></div>
+    <div class="top-meta"><span class="research-label">RESEARCH DEMO</span><span id="connection"><i></i> Connecting to local service</span></div>
+  </header>
+
+  <main>
+    <div class="intro"><div><p class="eyebrow">MEDATHON 2026 · FILTER 2</p><h2>A visible signal. A reviewable event.</h2><p>Select an input, observe the estimated eye state, and test the alert workflow.</p></div><a class="button quiet" href="/api/events.csv" download="lidguard_events.csv">Export event log <span aria-hidden="true">↗</span></a></div>
+
+    <nav class="modes" aria-label="Input source">
+      <button class="mode active" data-mode="simulation" aria-pressed="true"><b>01</b><span>Simulation<small>Test the alert workflow</small></span></button>
+      <button class="mode" data-mode="upload" aria-pressed="false"><b>02</b><span>Image test<small>Classify a selected eye crop</small></span></button>
+      <button class="mode" data-mode="browser" aria-pressed="false"><b>03</b><span>Computer camera<small>Live feed with manual eye selection</small></span></button>
+      <button class="mode" data-mode="pi" aria-pressed="false"><b>04</b><span>Raspberry Pi camera<small>CSI camera with Picamera2</small></span></button>
+    </nav>
+
+    <div id="message" class="message" role="status" hidden></div>
+    <div class="workspace">
+      <section class="panel input-panel" aria-labelledby="inputTitle">
+        <div class="panel-heading"><h3 id="inputTitle">Workflow simulation</h3><span id="sourceBadge" class="badge amber">SIMULATED INPUT</span></div>
+        <div id="simulationStage" class="simulation-stage">
+          <span class="stage-note">ILLUSTRATED EYE · OPERATOR-SELECTED STATE</span>
+          <svg id="simEye" class="sim-eye" viewBox="0 0 400 200" role="img" aria-label="Illustrated eye, state selected by operator">
+            <path class="eye-outline" d="M40 100 Q200 -25 360 100 Q200 225 40 100Z"/>
+            <g class="open-eye"><circle class="iris" cx="200" cy="100" r="46"/><circle class="pupil" cx="200" cy="100" r="23"/><circle class="glint" cx="214" cy="85" r="8"/></g>
+            <path class="closed-eye" d="M40 100 Q200 175 360 100"/>
+            <text class="unknown-eye" x="200" y="117" text-anchor="middle">?</text>
+          </svg>
+          <p id="simCaption">Select a state below to begin.</p>
+          <div class="simulation-controls"><button data-state="OPEN">Open</button><button data-state="CLOSED">Closed</button><button data-state="UNKNOWN">Unable to assess</button></div>
+          <p class="stage-footnote">These buttons test software behavior. They do not run image classification.</p>
+        </div>
+
+        <div id="captureStage" class="capture-section" hidden>
+          <div class="capture-toolbar">
+            <label id="fileLabel" class="button primary" hidden>Choose eye image<input id="imageFile" type="file" accept="image/png,image/jpeg,image/webp" hidden></label>
+            <button id="startCamera" class="primary" hidden>Start camera</button>
+            <button id="stopCamera" hidden>Stop camera</button>
+            <span id="captureHint">Drag around one eye to select the region.</span>
+          </div>
+          <div id="canvasStage" class="canvas-stage">
+            <canvas id="preview" width="640" height="480" aria-label="Camera or image preview. Drag to select one eye."></canvas>
+            <div id="emptyPreview" class="empty-preview"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="4" y="12" width="40" height="28" rx="5"/><circle cx="24" cy="26" r="8"/><path d="M15 12l4-6h10l4 6"/></svg><strong id="emptyTitle">No image selected</strong><span id="emptySubtitle">Choose a tightly cropped image of one eye.</span></div>
+          </div>
+          <div class="roi-controls"><label><input id="roiConfirmed" type="checkbox"> I can see one eye clearly in the selected region.</label><button id="fullImage" class="small">Select whole image</button></div>
+          <p class="fineprint">You select and check the eye region manually. The prototype does not automatically verify that an eye is present. Clear this checkbox if the eye moves out of view.</p>
+          <button id="classifyImage" class="primary" hidden>Classify selected eye</button>
+          <p id="singleImageNote" class="fineprint" hidden>A single image produces one estimate. It does not start the duration timer.</p>
+        </div>
+        <video id="video" autoplay playsinline muted hidden></video>
+      </section>
+
+      <section class="panel monitor-panel" aria-labelledby="monitorTitle">
+        <div class="panel-heading"><h3 id="monitorTitle">Observation</h3><span id="liveTag" class="badge">NO INPUT</span></div>
+        <div id="stateCard" class="state-card unknown"><span class="state-label">ESTIMATED EYE STATE</span><div class="state-line"><span class="state-dot"></span><strong id="eyeState">Unable to assess</strong></div><p id="stateDetail">Waiting for an observation.</p></div>
+        <div class="timer-block"><div><span>Continuous detected open state</span><strong id="openTime">0.0 <small>s</small></strong></div><div class="threshold-copy"><span>Demo threshold</span><b id="thresholdDisplay">5 s</b></div></div>
+        <div class="progress-track" role="progressbar" aria-label="Progress toward demo alert" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="progressFill"></div></div>
+        <p class="fineprint">The threshold is for demonstration only. It is not a clinically validated exposure limit.</p>
+        <div id="alarmBanner" class="alarm-banner" hidden><strong>Review requested</strong><span id="alarmText">The detected open state reached the demo threshold.</span><button id="acknowledge">Acknowledge this event</button></div>
+        <div class="observation-grid"><div><span>Model score</span><strong id="modelScore">—</strong><small>Uncalibrated; not a clinical probability</small></div><div><span>Input check</span><strong id="qualityLabel">No observation</strong><small id="qualityDetail">No automated eye-presence verification</small></div></div>
+        <details class="controls"><summary>Demo settings</summary><label>Alert threshold (seconds)<input id="thresholdInput" type="number" min="1" max="60" step="1" value="5"></label><button id="applySettings">Apply and restart observation</button><label class="sound-control"><input id="soundEnabled" type="checkbox"> Play a short sound for new demo alerts</label></details>
+        <button id="reset" class="quiet reset-button">Reset observation</button>
+      </section>
+    </div>
+
+    <section class="lower-grid">
+      <div class="panel log-panel"><div class="panel-heading"><h3>Recent interface changes</h3><span><b id="eventCount">0</b> logged events</span></div><ol id="eventList" class="event-list"><li class="no-event">A session event will appear here after an input changes.</li></ol><p class="fineprint">Export the CSV for the complete server event log and input-source labels.</p></div>
+      <div class="panel scope-panel"><div class="panel-heading"><h3>What this prototype demonstrates</h3></div><ul><li>Eye-state estimates from manually selected RGB eye crops.</li><li>Continuous open-state timing and an acknowledgment workflow.</li><li>A visible “unable to assess” state for rejected or stale input.</li><li>Local processing and event export without saved camera frames.</li></ul><p class="scope-note">Corneal visibility, partial opening, protection from dressings, and performance in ICU patients require separate validation.</p><details><summary>Model and validation information</summary><pre id="modelInfo">Loading model metadata…</pre></details></div>
+    </section>
+    <footer><span>LidGuard · Engineering proof of concept</span><span>For evaluation only. No patient testing or clinical validation.</span></footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
